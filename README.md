@@ -1,0 +1,2 @@
+# manebo
+productivity kaizen
