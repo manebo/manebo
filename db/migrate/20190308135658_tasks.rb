@@ -4,6 +4,7 @@ class Tasks < ActiveRecord::Migration[5.2]
       t.string :title
       t.time :estimated_time
       t.time :spent_time
+      t.time :excluded_time
     end
   end
 end
