@@ -29,5 +29,14 @@ module Manebo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # configs for auto generation of rspec related files
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helpter_specs: false,
+        routing_specs: fasle
+    end
   end
 end
