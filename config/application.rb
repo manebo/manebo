@@ -36,7 +36,7 @@ module Manebo
         fixtures: false,
         view_specs: false,
         helpter_specs: false,
-        routing_specs: fasle
+        routing_specs: false
     end
   end
 end
