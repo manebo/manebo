@@ -26,22 +26,22 @@ RSpec.describe Task, type: :model do
     expect(task.errors[:title]).to include("can't be blank")
   end
 
-  it "is invalid when title is longer than 20" do
-    task = Task.new(title: "abcdefghijklmnopqrstu")
+  it "is invalid when title is longer than 50" do
+    task = Task.new(title: "a" * 51)
     task.valid?
-    expect(task.errors[:title]).to include("is too long (maximum is 20 characters)")
+    expect(task.errors[:title]).to include("is too long (maximum is 50 characters)")
   end
 
-  it "is invalid when description is longer than 300" do
-    task = Task.new(description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1")
+  it "is invalid when description is longer than 500" do
+    task = Task.new(description: "a" * 501)
     task.valid?
-    expect(task.errors[:description]).to include("is too long (maximum is 300 characters)")
+    expect(task.errors[:description]).to include("is too long (maximum is 500 characters)")
   end
 
-  it "is invalid when comment is longer than 100" do
-    task = Task.new(comment: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1")
+  it "is invalid when comment is longer than 500" do
+    task = Task.new(comment: "a" * 501)
     task.valid?
-    expect(task.errors[:comment]).to include("is too long (maximum is 100 characters)")
+    expect(task.errors[:comment]).to include("is too long (maximum is 500 characters)")
   end
 
   it "is invalid without timer_status" do
