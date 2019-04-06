@@ -6,7 +6,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :comment
       t.time :estimated_time
-      t.time :spent_time, default: 0
+      t.integer :spent_secs, default: 0
       t.time :exluded_time
       t.integer :timer_status, null: false, default: 0
 

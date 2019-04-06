@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_122936) do
     t.string "description"
     t.string "comment"
     t.time "estimated_time"
-    t.time "spent_time", default: "2000-01-01 00:00:00"
+    t.integer "spent_secs", default: 0
     t.time "exluded_time"
     t.integer "timer_status", default: 0, null: false
     t.datetime "created_at", null: false
