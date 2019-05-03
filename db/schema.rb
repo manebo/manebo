@@ -12,17 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2019_03_13_122936) do
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
-    t.string "description"
-    t.string "comment"
+    t.text "description"
+    t.text "comment"
     t.time "estimated_time"
     t.integer "spent_secs", default: 0
     t.time "exluded_time"
     t.integer "timer_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["id"], name: "index_tasks_on_id"
   end
 
 end

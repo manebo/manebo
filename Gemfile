@@ -36,6 +36,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Rspec
 gem 'rspec-rails', '~> 3.8.2'
+# factory bot for test data
+gem 'factory_bot_rails'
+# for clearing data after saving with factory
+gem 'database_cleaner'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
